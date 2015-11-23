@@ -162,13 +162,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
             [tableView deleteRowsAtIndexPaths:@[ indexPath ]
                              withRowAnimation:self.rowAnimation];
             break;
-            
-        case NSFetchedResultsChangeUpdate:
-            change[@(type)] = indexPath;
-            [tableView reloadRowsAtIndexPaths:@[ indexPath ]
-                             withRowAnimation:self.rowAnimation];
-            break;
-            
+
         case NSFetchedResultsChangeMove:
             change[@(type)] = @[ indexPath, newIndexPath ];
             [tableView deleteRowsAtIndexPaths:@[ indexPath ]
